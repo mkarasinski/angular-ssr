@@ -1,3 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+
+@theme {
+  --color-surface: oklch(0.19 0.02 250);
+  --color-surface-raised: oklch(0.24 0.02 250);
+  --color-ink: oklch(0.95 0.01 250);
+  --color-ink-muted: oklch(0.72 0.02 250);
+  --color-accent: oklch(0.72 0.14 195);
+  --radius-card: 0.875rem;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+}
