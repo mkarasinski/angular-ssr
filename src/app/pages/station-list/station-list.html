@@ -1,0 +1,25 @@
+<section class="space-y-8">
+  <header class="space-y-2">
+    <h1 class="text-3xl font-semibold tracking-tight">Stations</h1>
+    <p class="text-ink-muted">Rendered on the server, once per request.</p>
+  </header>
+
+  @if (stations.error()) {
+    <p class="text-red-400">Could not load stations.</p>
+  } @else {
+    <ul class="grid gap-4 sm:grid-cols-2">
+      @for (station of stations.value(); track station.slug) {
+        <li
+          class="rounded-card border border-white/10 bg-surface-raised p-5 transition hover:border-accent/40"
+        >
+          <div class="flex items-baseline justify-between gap-3">
+            <h2 class="font-medium">{{ station.name }}</h2>
+            <span class="text-xs text-ink-muted">{{ station.elevation }} m</span>
+          </div>
+          <p class="mt-1 text-xs uppercase tracking-wide text-accent">{{ station.region }}</p>
+          <p class="mt-3 text-sm text-ink-muted">{{ station.description }}</p>
+        </li>
+      }
+    </ul>
+  }
+</section>
