@@ -1,9 +1,10 @@
 import { Component, inject, input } from '@angular/core';
 import { Stations } from '../../services/stations';
+import { ReadingsChart } from '../readings-chart/readings-chart';
 
 @Component({
   selector: 'app-station-detail',
-  imports: [],
+  imports: [ReadingsChart],
   templateUrl: './station-detail.html',
   styleUrl: './station-detail.css',
 })

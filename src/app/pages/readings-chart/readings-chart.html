@@ -1,0 +1,28 @@
+<div class="rounded-card border border-white/10 bg-surface-raised p-5">
+  <h2 class="mb-4 text-sm font-medium uppercase tracking-wide text-ink-muted">
+    24-hour temperature
+  </h2>
+
+  <svg viewBox="0 0 100 44" class="w-full" preserveAspectRatio="none">
+    <polyline
+      [attr.points]="points()"
+      fill="none"
+      stroke="currentColor"
+      class="text-accent"
+      stroke-width="0.8"
+      vector-effect="non-scaling-stroke"
+    />
+  </svg>
+
+  @if (extremes(); as e) {
+    <p class="mt-3 text-sm text-ink-muted">Low {{ format(e.min) }} · High {{ format(e.max) }}</p>
+  }
+
+  <button
+    type="button"
+    (click)="toggleUnit()"
+    class="mt-4 rounded-md border border-white/10 px-3 py-1.5 text-xs text-ink-muted transition hover:border-accent/40 hover:text-ink"
+  >
+    Switch to {{ unit() === 'C' ? '°F' : '°C' }}
+  </button>
+</div>

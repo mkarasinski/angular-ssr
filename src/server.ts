@@ -48,6 +48,21 @@ app.get('/api/stations/:slug', (req, res) => {
   station ? res.json(station) : res.status(404).json({ message: 'Not found' });
 });
 
+app.get('/api/stations/:slug/readings', (req, res) => {
+  const station = STATIONS.find((s) => s.slug === req.params.slug);
+  if (!station) {
+    res.status(404).json({ message: 'Not found' });
+    return;
+  }
+  const base = 14 - station.elevation / 180;
+  const amplitude = station.dailyRange / 2;
+  const readings = Array.from({ length: 24 }, (_, hour) => ({
+    hour,
+    temperature:
+      Math.round((base + Math.sin(((hour - 8) / 24) * 2 * Math.PI) * amplitude) * 10) / 10,
+  }));
+  res.json(readings);
+});
 /**
  * Handle all other requests by rendering the Angular application.
  */

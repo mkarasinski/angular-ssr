@@ -7,6 +7,7 @@ export const STATIONS: Station[] = [
     region: 'Tatra Mountains',
     elevation: 1991,
     description: 'The highest permanently staffed weather station in Poland.',
+    dailyRange: 6,
   },
   {
     slug: 'sniezka',
@@ -14,6 +15,7 @@ export const STATIONS: Station[] = [
     region: 'Karkonosze',
     elevation: 1602,
     description: 'Perched on the Czech border, famous for extreme wind speeds.',
+    dailyRange: 5,
   },
   {
     slug: 'hel',
@@ -21,6 +23,7 @@ export const STATIONS: Station[] = [
     region: 'Baltic Coast',
     elevation: 1,
     description: 'A narrow spit station tracking sea breeze and storm surges.',
+    dailyRange: 4,
   },
   {
     slug: 'warszawa-okecie',
@@ -28,6 +31,7 @@ export const STATIONS: Station[] = [
     region: 'Mazovia',
     elevation: 106,
     description: 'The reference station for the Warsaw metropolitan area.',
+    dailyRange: 9,
   },
   {
     slug: 'suwalki',
@@ -35,6 +39,7 @@ export const STATIONS: Station[] = [
     region: 'Podlasie',
     elevation: 184,
     description: 'Known as the Polish pole of cold.',
+    dailyRange: 11,
   },
   {
     slug: 'lebork',
@@ -42,5 +47,6 @@ export const STATIONS: Station[] = [
     region: 'Pomerania',
     elevation: 25,
     description: 'Inland lowland station with a strong maritime influence.',
+    dailyRange: 8,
   },
 ];

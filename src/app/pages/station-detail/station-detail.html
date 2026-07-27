@@ -11,3 +11,11 @@
 } @else if (station.error()) {
   <p class="text-red-400">Station not found.</p>
 }
+
+<div class="h-[80vh]"></div>
+
+@defer (hydrate on viewport) {
+  <app-readings-chart [slug]="slug()" />
+} @placeholder {
+  <div class="h-48 animate-pulse rounded-card bg-surface-raised"></div>
+}

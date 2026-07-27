@@ -4,4 +4,10 @@ export interface Station {
   region: string;
   elevation: number;
   description: string;
+  dailyRange: number;
+}
+
+export interface Reading {
+  hour: number;
+  temperature: number;
 }
