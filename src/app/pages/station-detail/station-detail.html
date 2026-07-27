@@ -1,0 +1,13 @@
+@if (station.value(); as s) {
+  <article class="space-y-6">
+    <a routerLink="/stations" class="text-sm text-ink-muted hover:text-ink">← Back to stations</a>
+    <header class="space-y-2">
+      <p class="text-xs uppercase tracking-wide text-accent">{{ s.region }}</p>
+      <h1 class="text-3xl font-semibold tracking-tight">{{ s.name }}</h1>
+      <p class="text-ink-muted">{{ s.elevation }} m above sea level</p>
+    </header>
+    <p class="max-w-2xl text-ink-muted">{{ s.description }}</p>
+  </article>
+} @else if (station.error()) {
+  <p class="text-red-400">Station not found.</p>
+}

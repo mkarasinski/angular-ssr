@@ -37,10 +37,15 @@ app.use(
 );
 
 /**
- * Custom endpoint to host dummy data
+ * Custom endpoints to host dummy data
  */
 app.get('/api/stations', (req, res) => {
   res.json(STATIONS);
+});
+
+app.get('/api/stations/:slug', (req, res) => {
+  const station = STATIONS.find((s) => s.slug === req.params.slug);
+  station ? res.json(station) : res.status(404).json({ message: 'Not found' });
 });
 
 /**
