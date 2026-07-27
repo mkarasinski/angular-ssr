@@ -6,6 +6,7 @@ import {
 } from '@angular/ssr/node';
 import express from 'express';
 import { join } from 'node:path';
+import { STATIONS } from './server/stations.data';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
@@ -36,14 +37,19 @@ app.use(
 );
 
 /**
+ * Custom endpoint to host dummy data
+ */
+app.get('/api/stations', (req, res) => {
+  res.json(STATIONS);
+});
+
+/**
  * Handle all other requests by rendering the Angular application.
  */
 app.use((req, res, next) => {
   angularApp
     .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
+    .then((response) => (response ? writeResponseToNodeResponse(response, res) : next()))
     .catch(next);
 });
 
