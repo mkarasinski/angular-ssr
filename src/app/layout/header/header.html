@@ -1,0 +1,22 @@
+<header class="border-b border-white/10 bg-surface-raised/60 backdrop-blur">
+  <nav class="mx-auto flex max-w-5xl items-center gap-6 px-6 py-4">
+    <a routerLink="/" class="text-lg font-semibold tracking-tight text-accent">
+      Meteo<span class="text-ink">Atlas</span>
+    </a>
+
+    <ul class="flex gap-1 text-sm">
+      @for (link of links; track link.path) {
+        <li>
+          <a
+            [routerLink]="link.path"
+            routerLinkActive="bg-white/10 text-ink"
+            [routerLinkActiveOptions]="{ exact: link.exact }"
+            class="rounded-md px-3 py-1.5 text-ink-muted transition hover:bg-white/5 hover:text-ink"
+          >
+            {{ link.label }}
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
+</header>

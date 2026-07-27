@@ -1,2 +1,7 @@
-<h1 class="text-3xl font-bold text-accent">Meteo Atlas</h1>
-<router-outlet />
+<div class="flex min-h-full flex-col">
+  <app-header />
+  <main class="mx-auto w-full max-w-5xl flex-1 px-6 py-10">
+    <router-outlet />
+  </main>
+  <app-footer />
+</div>
