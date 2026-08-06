@@ -1,9 +1,10 @@
 import { Component, inject, signal } from '@angular/core';
 import { Stations } from '../../services/stations';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-station-list',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './station-list.html',
   styleUrl: './station-list.css',
 })
