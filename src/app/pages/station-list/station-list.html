@@ -2,6 +2,11 @@
   <header class="space-y-2">
     <h1 class="text-3xl font-semibold tracking-tight">Stations</h1>
     <p class="text-ink-muted">Rendered on the server, once per request.</p>
+
+    @if (hydratedAt(); as time) {
+      <p class="text-xs text-ink-muted">Hydrated at {{ time }}</p>
+    }
+
   </header>
 
   @if (stations.error()) {
